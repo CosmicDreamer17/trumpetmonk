@@ -81,7 +81,7 @@ module.exports = async function handler(req, res) {
       'select-6': payload.paSystem || 'two',
       'currency-1': payload.budget || '300',
       'textarea-1': payload.message || '',
-      'select-3': 'I-hope-to-be-contacted-via-email',
+      'select-3': payload.contactPref || 'Email',
       'phone-1': payload.phone || '',
       'checkbox-1[]': 'You-will-get-an-email-reply,-so-please-add-to-your-safe-senders-list,-and-check-your-inbox---spam-folder.',
       'hidden-1': '',

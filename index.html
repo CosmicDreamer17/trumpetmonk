@@ -1254,9 +1254,18 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="c-phone">Phone / SMS / Text (Optional)</label>
-            <input type="tel" id="c-phone" name="phone" placeholder="E.g. +1 (919) 555-0123" autocomplete="tel" />
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-pref">Contact Preference <span class="req">*</span></label>
+              <select id="c-pref" name="contactPref">
+                <option value="Email">Email</option>
+                <option value="Mobile phone SMS / TEXT Message">Mobile Phone SMS / Text</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-phone">Phone / SMS (Optional)</label>
+              <input type="tel" id="c-phone" name="phone" placeholder="E.g. +1 (919) 555-0123" autocomplete="tel" />
+            </div>
           </div>
 
           <div class="form-group">
@@ -1341,6 +1350,7 @@
         attendees: document.getElementById('c-attendees').value,
         paSystem: document.getElementById('c-pa').value,
         budget: document.getElementById('c-budget').value.trim(),
+        contactPref: document.getElementById('c-pref').value,
         phone: document.getElementById('c-phone').value.trim(),
         message: document.getElementById('c-message').value.trim()
       };
