@@ -3,18 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trumpet Monk | Support Live Street Music</title>
+  <title>Trumpet Monk | Live Music, Tip Jar, Events &amp; Story — Chapel Hill, NC</title>
+  <meta name="description" content="Support Chris (TrumpetMonk) on Franklin St. in Chapel Hill, NC. Instant Tip Jar, Weekly Sunset Jazz Schedule, Private Event Booking, Music Samples, and the Trumpet Monk Story." />
+  <meta property="og:title" content="Trumpet Monk | Art in Daily Life — Chapel Hill, NC" />
+  <meta property="og:description" content="Support live trumpet music on Franklin Street, view weekly Sunset Jazz spots, listen to tracks, explore My Story, or book Chris for private events." />
+  <meta property="og:image" content="https://ik.imagekit.io/softart/Trumpet-Monk--Community-Outreach--UNC-Catherine-Huang-Photographer--v2025-03-15.jpg" />
+  <link rel="icon" href="https://sdos.cloud/wp-content/object/SoftArt-Favicon-v2023-11-30.png" />
   <style>
     :root {
-      --bg-color: #0d0f14;
-      --card-bg: #181b24;
+      --bg-color: #0b0d13;
+      --bg-elevated: #141822;
+      --card-bg: #181d29;
+      --card-hover: #1f2535;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --accent-gold: #f59e0b;
+      --accent-gold-soft: rgba(245, 158, 11, 0.14);
+      --unc-blue: #7bafd4;
       --stripe: #635BFF;
       --cashapp: #00D632;
       --paypal: #0070BA;
-      --border: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.09);
+      --radius-lg: 18px;
+      --radius-md: 14px;
     }
 
     * {
@@ -24,39 +35,50 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-color);
-      background-image: radial-gradient(circle at 50% 0%, #232736 0%, var(--bg-color) 70%);
+      background-image: radial-gradient(circle at 50% 0%, #202639 0%, var(--bg-color) 65%);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 2rem 1.25rem;
-      line-height: 1.5;
+      padding: 1.25rem 1rem 3rem;
+      line-height: 1.55;
     }
 
-    main {
+    .container {
       width: 100%;
-      max-width: 420px;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin: auto 0;
+      padding: 0.5rem 0 1.25rem;
     }
 
-    /* Hero Section */
     .avatar-ring {
-      width: 96px;
-      height: 96px;
+      width: 104px;
+      height: 104px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      background: linear-gradient(135deg, var(--accent-gold), #d97706, var(--unc-blue));
       padding: 3px;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 28px -5px rgba(245, 158, 11, 0.35);
+      position: relative;
     }
 
     .avatar {
@@ -64,11 +86,10 @@
       height: 100%;
       border-radius: 50%;
       background-color: var(--card-bg);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.75rem;
-      overflow: hidden;
     }
 
     .avatar img {
@@ -77,20 +98,33 @@
       object-fit: cover;
     }
 
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(245, 158, 11, 0.12);
+      background: var(--accent-gold-soft);
       color: var(--accent-gold);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      font-size: 0.75rem;
-      font-weight: 600;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 0.3rem 0.75rem;
+      padding: 0.28rem 0.75rem;
       border-radius: 9999px;
-      margin-bottom: 0.75rem;
+    }
+
+    .badge.unc {
+      background: rgba(123, 175, 212, 0.14);
+      color: var(--unc-blue);
+      border-color: rgba(123, 175, 212, 0.3);
     }
 
     .pulse-dot {
@@ -103,21 +137,28 @@
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 0.35; transform: scale(0.85); }
     }
 
     h1 {
       font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .subtitle {
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+      font-weight: 600;
       margin-bottom: 0.5rem;
     }
 
     .bio {
       color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 1.75rem;
-      max-width: 350px;
+      font-size: 0.95rem;
+      max-width: 440px;
+      margin-bottom: 1.25rem;
     }
 
     /* Tip Jar Section */
@@ -125,17 +166,18 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 0.875rem;
-      margin-bottom: 2rem;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     .section-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 0.25rem;
+      text-align: center;
+      margin-bottom: 0.15rem;
     }
 
     .tip-btn {
@@ -143,7 +185,7 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 1.1rem 1.25rem;
+      padding: 1rem 1.15rem;
       border-radius: 16px;
       border: none;
       cursor: pointer;
@@ -151,9 +193,9 @@
       text-decoration: none;
       color: #ffffff;
       font-weight: 700;
-      font-size: 1.125rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      font-size: 1.05rem;
+      transition: transform 0.15s ease, filter 0.15s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
 
     .tip-btn:active {
@@ -167,24 +209,16 @@
     .btn-left {
       display: flex;
       align-items: center;
-      gap: 0.875rem;
+      gap: 0.85rem;
     }
 
     .btn-icon {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-    }
-
-    .btn-handle {
-      font-size: 0.825rem;
-      font-weight: 500;
-      opacity: 0.88;
-      display: block;
-      text-align: left;
     }
 
     .btn-title {
@@ -193,10 +227,19 @@
       line-height: 1.2;
     }
 
+    .btn-handle {
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0.88;
+      display: block;
+      text-align: left;
+      margin-top: 0.1rem;
+    }
+
     .arrow-icon {
       width: 20px;
       height: 20px;
-      opacity: 0.8;
+      opacity: 0.85;
       flex-shrink: 0;
     }
 
@@ -218,59 +261,452 @@
       background: linear-gradient(135deg, #0070BA, #003087);
     }
 
-    /* Footer Links */
+    /* Quick Audio Bar */
+    .quick-audio {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .quick-audio-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+
+    .quick-audio-title {
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .quick-audio-sub {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    audio {
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    /* Sticky App-Like Navigation Tabs */
+    .nav-tabs {
+      position: sticky;
+      top: 0.5rem;
+      z-index: 30;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+      background: rgba(20, 24, 34, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0.35rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.6rem 0.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn span.tab-emoji {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .tab-btn.active {
+      background: var(--accent-gold);
+      color: #0b0d13;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+    }
+
+    .tab-panel {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 1rem;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .tab-panel.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards & Content Blocks */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-top: 0.15rem;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-gold);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pill.blue {
+      background: rgba(123, 175, 212, 0.16);
+      color: var(--unc-blue);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .venue-meta {
+      font-size: 0.82rem;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.65rem 0.85rem;
+      border-radius: 10px;
+      margin: 0.65rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      color: var(--text-main);
+      transition: all 0.15s ease;
+    }
+
+    .action-btn.primary {
+      background: var(--accent-gold);
+      color: #0b0d13;
+      border-color: var(--accent-gold);
+    }
+
+    .action-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Media & Video Wrappers */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .bandlab-wrap {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 0.6rem 0;
+      border: 1px solid var(--border);
+      background: #12151e;
+    }
+
+    .bandlab-wrap iframe {
+      width: 100%;
+      height: 165px;
+      border: 0;
+      display: block;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .photo-grid img,
+    .card-img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .card-img {
+      max-height: 240px;
+      margin: 0.65rem 0;
+    }
+
+    /* Quote & Testimonial Box */
+    .testimonial {
+      background: rgba(245, 158, 11, 0.07);
+      border-left: 3px solid var(--accent-gold);
+      padding: 0.75rem 0.9rem;
+      border-radius: 0 10px 10px 0;
+      margin: 0.65rem 0;
+      font-size: 0.86rem;
+      color: var(--text-main);
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      font-style: normal;
+      color: var(--accent-gold);
+      font-size: 0.76rem;
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .cred-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0.65rem 0;
+    }
+
+    .cred-list li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .cred-list li span.bullet {
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+
+    /* Contact Form Styles */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    label span.req {
+      color: var(--accent-gold);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: var(--bg-color);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 0.7rem 0.85rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .event-conditional {
+      display: none;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .event-conditional.visible {
+      display: block;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: 18px;
+      height: 18px;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.95rem;
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #0b0d13;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: filter 0.15s ease;
+    }
+
+    .submit-btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .form-status {
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(0, 214, 50, 0.12);
+      border: 1px solid rgba(0, 214, 50, 0.35);
+      color: #4ade80;
+    }
+
+    .form-status.info {
+      display: block;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+    }
+
+    /* Footer */
     footer {
       width: 100%;
-      max-width: 420px;
+      max-width: 560px;
       border-top: 1px solid var(--border);
+      margin-top: 2rem;
       padding-top: 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .social-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      width: 100%;
-    }
-
-    .social-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem 0.875rem;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .social-btn:active {
-      transform: scale(0.97);
-      background-color: #222634;
-    }
-
-    .social-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    .quote {
-      font-size: 0.8rem;
-      font-style: italic;
-      color: var(--text-muted);
       text-align: center;
-      max-width: 340px;
+      gap: 0.75rem;
+    }
+
+    .quote-banner {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-main);
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
     }
 
     .footer-note {
@@ -281,111 +717,678 @@
 </head>
 <body>
 
-  <main>
-    <div class="avatar-ring">
-      <div class="avatar" role="img" aria-label="Trumpet Monk">🎺</div>
-    </div>
+  <div class="container">
+    <!-- ABOVE THE FOLD: HERO + INSTANT TIP JAR -->
+    <header class="hero">
+      <div class="avatar-ring">
+        <div class="avatar">
+          <img src="https://ik.imagekit.io/softart/Trumpet-Monk--Community-Outreach--UNC-Catherine-Huang-Photographer--v2025-03-15.jpg" alt="Chris — Trumpet Monk playing on Franklin Street" />
+        </div>
+      </div>
 
-    <div class="badge">
-      <span class="pulse-dot"></span>
-      Live on Franklin St &bull; Chapel Hill
-    </div>
+      <div class="badge-row">
+        <div class="badge">
+          <span class="pulse-dot"></span>
+          Franklin St &bull; Chapel Hill, NC
+        </div>
+        <div class="badge unc">UNC Community Outreach</div>
+      </div>
 
-    <h1>Thanks for listening!</h1>
-    <p class="bio">
-      I'm <strong>Chris (TrumpetMonk)</strong>, sharing live trumpet music on the streets of Chapel Hill. Every tip helps keep live street music thriving!
-    </p>
+      <h1>Trumpet Monk</h1>
+      <div class="subtitle">Art in Daily Life &bull; Music Community Outreach</div>
+      <p class="bio">
+        Thanks for listening! I'm <strong>Chris (TrumpetMonk)</strong>. My mission is supported by your donations—bringing golden-era trumpet music, joy, and peace into daily life on the streets of Chapel Hill.
+      </p>
 
-    <section class="tip-section" aria-label="Tip Jar">
-      <div class="section-label">Virtual Tip Jar</div>
+      <!-- 1-Tap Virtual Tip Jar -->
+      <section class="tip-section" aria-label="Virtual Tip Jar">
+        <div class="section-label">Support the Mission &mdash; Instant Tip Jar</div>
 
-      <!-- Cash App (via official Stripe Checkout) -->
-      <a href="https://donate.stripe.com/eVabL47Uagw9bja6op" target="_blank" rel="noopener noreferrer" class="tip-btn cashapp">
-        <div class="btn-left">
-          <div class="btn-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M13.5 5.6c1.5.1 2.9.6 4 1.4l1.6-2.4c-1.4-1-3.1-1.6-5-1.8V1h-2.8v1.8c-3.3.4-5.7 2.5-5.7 5.5 0 3.2 2.5 4.6 5.9 5.5 2.7.7 3.6 1.5 3.6 2.8 0 1.4-1.3 2.4-3.4 2.4-2 0-3.8-.7-5.1-1.9L4.8 19.5c1.5 1.4 3.6 2.2 6 2.4V24h2.8v-2.1c3.6-.4 6.1-2.5 6.1-5.7 0-3.4-2.6-4.8-6.2-5.7-2.5-.6-3.4-1.3-3.4-2.5 0-1.2 1.1-2.1 3.4-2.4z"/>
-            </svg>
+        <!-- Cash App -->
+        <a href="https://donate.stripe.com/eVabL47Uagw9bja6op" target="_blank" rel="noopener noreferrer" class="tip-btn cashapp">
+          <div class="btn-left">
+            <div class="btn-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+                <path d="M13.5 5.6c1.5.1 2.9.6 4 1.4l1.6-2.4c-1.4-1-3.1-1.6-5-1.8V1h-2.8v1.8c-3.3.4-5.7 2.5-5.7 5.5 0 3.2 2.5 4.6 5.9 5.5 2.7.7 3.6 1.5 3.6 2.8 0 1.4-1.3 2.4-3.4 2.4-2 0-3.8-.7-5.1-1.9L4.8 19.5c1.5 1.4 3.6 2.2 6 2.4V24h2.8v-2.1c3.6-.4 6.1-2.5 6.1-5.7 0-3.4-2.6-4.8-6.2-5.7-2.5-.6-3.4-1.3-3.4-2.5 0-1.2 1.1-2.1 3.4-2.4z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="btn-title">Donate with Cash App</span>
+              <span class="btn-handle">Instant 1-Tap Street Tip</span>
+            </div>
           </div>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- Apple Pay / Google Pay / Credit Card -->
+        <a href="https://donate.stripe.com/eVabL47Uagw9bja6op" target="_blank" rel="noopener noreferrer" class="tip-btn stripe-pay">
+          <div class="btn-left">
+            <div class="btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <div>
+              <span class="btn-title">Apple Pay / Google Pay / Card</span>
+              <span class="btn-handle">Fast Checkout via Stripe</span>
+            </div>
+          </div>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- PayPal (Exact form from original site) -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="width:100%;">
+          <input type="hidden" name="cmd" value="_donations" />
+          <input type="hidden" name="business" value="accounting@soft-designs.com" />
+          <input type="hidden" name="lc" value="US" />
+          <input type="hidden" name="item_name" value="Voice-Club-Trumpet-Donation" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="hidden" name="no_note" value="1" />
+          <button type="submit" class="tip-btn paypal">
+            <div class="btn-left">
+              <div class="btn-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+                  <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 2.79A.859.859 0 0 1 5.792 2h7.292c3.412 0 5.764 1.745 5.25 5.42-.437 3.12-2.735 5.148-6.115 5.148H9.288l-1.08 6.993a.642.642 0 0 1-.633.543H7.076zm12.44-13.06c-.45 3.218-2.927 5.513-6.733 5.513h-2.17l-.852 5.513a.535.535 0 0 0 .529.617h3.22c.375 0 .694-.273.752-.644l.622-3.937h1.99c3.058 0 5.34-1.61 5.792-4.835.335-2.39-.742-3.924-2.615-4.382.345.672.548 1.404.465 2.155z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="btn-title">Donate with PayPal</span>
+                <span class="btn-handle">Voice-Club-Trumpet-Donation</span>
+              </div>
+            </div>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <!-- Instant Track Preview -->
+      <div class="quick-audio">
+        <div class="quick-audio-header">
+          <span class="quick-audio-title">🎸 Trending Track: &ldquo;Vincent&rdquo;</span>
+          <span class="quick-audio-sub">Chris (Guitar/Vocals) &amp; Scott Sawyer</span>
+        </div>
+        <audio controls preload="none">
+          <source src="https://softart.club/wp-content/object/TMonk-MusicLessons-Guitar-Sample-Vincent.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </header>
+
+    <!-- PROGRESSIVE DISCLOSURE NAVIGATION TABS -->
+    <nav class="nav-tabs" aria-label="Main Sections">
+      <button type="button" class="tab-btn active" data-tab="platform" onclick="switchTab('platform')">
+        <span class="tab-emoji">📍</span>
+        <span>Platform</span>
+      </button>
+      <button type="button" class="tab-btn" data-tab="events" onclick="switchTab('events')">
+        <span class="tab-emoji">🎺</span>
+        <span>Events</span>
+      </button>
+      <button type="button" class="tab-btn" data-tab="story" onclick="switchTab('story')">
+        <span class="tab-emoji">📖</span>
+        <span>My Story</span>
+      </button>
+      <button type="button" class="tab-btn" data-tab="contact" onclick="switchTab('contact')">
+        <span class="tab-emoji">✉️</span>
+        <span>Contact</span>
+      </button>
+    </nav>
+
+    <!-- ==========================================
+         TAB 1: FULL PLATFORM (Schedule, Sponsors, Trivia, eCard, Music)
+         ========================================== -->
+    <section id="tab-platform" class="tab-panel active" aria-label="Full Platform">
+      <!-- Weekly Franklin St. Schedule & Sponsors -->
+      <div class="card">
+        <div class="card-header">
           <div>
-            <span class="btn-title">Tip with Cash App</span>
-            <span class="btn-handle">Instant Checkout</span>
+            <div class="card-title">Franklin St. Restaurant Sponsors</div>
+            <div class="card-subtitle">Weather permitting, find me most evenings performing here:</div>
+          </div>
+          <span class="pill">Live Schedule</span>
+        </div>
+
+        <!-- 411 West -->
+        <div class="venue-meta">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:0.95rem;color:var(--accent-gold);">411 West Italian Cafe</strong>
+            <span class="pill">Fri &amp; Sat</span>
+          </div>
+          <div><strong>Sunset Jazz:</strong> Every Friday &amp; Saturday (Early Evening Outdoors)</div>
+          <div style="color:var(--text-muted);">411 W Franklin St, Chapel Hill, NC 27516 &bull; (919) 967-2782</div>
+          <div class="btn-row">
+            <a href="https://411west.com/" target="_blank" rel="noopener noreferrer" class="action-btn">Visit 411west.com &rarr;</a>
           </div>
         </div>
-        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
 
-      <!-- Apple Pay / Google Pay / Card (via official Stripe Checkout) -->
-      <a href="https://donate.stripe.com/eVabL47Uagw9bja6op" target="_blank" rel="noopener noreferrer" class="tip-btn stripe-pay">
-        <div class="btn-left">
-          <div class="btn-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-              <rect x="2" y="5" width="20" height="14" rx="2"/>
-              <line x1="2" y1="10" x2="22" y2="10"/>
-            </svg>
+        <!-- Mediterranean Deli -->
+        <div class="venue-meta">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:0.95rem;color:var(--accent-gold);">Mediterranean Deli, Bakery &amp; Catering</strong>
+            <span class="pill">Tue / Wed / Thu</span>
           </div>
-          <div>
-            <span class="btn-title">Apple Pay / Google Pay / Card</span>
-            <span class="btn-handle">One-tap via Stripe</span>
+          <div><strong>Sunset Jazz:</strong> Weekly Tue, Wed &amp; Thu (Early Evening Outdoors)</div>
+          <div style="color:var(--text-muted);">410 W Franklin St, Chapel Hill, NC 27516 &bull; (919) 967-2666</div>
+          <div class="btn-row">
+            <a href="https://mediterraneandeli.com/" target="_blank" rel="noopener noreferrer" class="action-btn">Visit MediterraneanDeli.com &rarr;</a>
           </div>
         </div>
-        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
 
-      <!-- PayPal (Official PayPal Donation to accounting@soft-designs.com) -->
-      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=accounting%40soft-designs.com&lc=US&item_name=Voice-Club-Trumpet-Donation&currency_code=USD&no_note=1" target="_blank" rel="noopener noreferrer" class="tip-btn paypal">
-        <div class="btn-left">
-          <div class="btn-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 2.79A.859.859 0 0 1 5.792 2h7.292c3.412 0 5.764 1.745 5.25 5.42-.437 3.12-2.735 5.148-6.115 5.148H9.288l-1.08 6.993a.642.642 0 0 1-.633.543H7.076zm12.44-13.06c-.45 3.218-2.927 5.513-6.733 5.513h-2.17l-.852 5.513a.535.535 0 0 0 .529.617h3.22c.375 0 .694-.273.752-.644l.622-3.937h1.99c3.058 0 5.34-1.61 5.792-4.835.335-2.39-.742-3.924-2.615-4.382.345.672.548 1.404.465 2.155z"/>
-            </svg>
+        <!-- Zayka -->
+        <div class="venue-meta">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:0.95rem;color:var(--accent-gold);">Zayka Indian Grill &amp; Bar</strong>
+            <span class="pill">Most Nights</span>
           </div>
-          <div>
-            <span class="btn-title">Tip with PayPal</span>
-            <span class="btn-handle">TrumpetMonk Official PayPal</span>
+          <div><strong>Jazz at Zayka:</strong> Most Nights &mdash; Early Evening Outdoors</div>
+          <div style="color:var(--text-muted);">105 E Franklin St, Chapel Hill, NC 27514 &bull; (919) 240-5484</div>
+          <div class="btn-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=105+E+Franklin+St+Chapel+Hill+NC+27514" target="_blank" rel="noopener noreferrer" class="action-btn">Directions to Zayka &rarr;</a>
           </div>
         </div>
-        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+      </div>
+
+      <!-- Featured Musical eCard & Sample Sounds -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Featured Musical eCard &amp; Tracks</div>
+            <div class="card-subtitle">&ldquo;What a Wonderful World&rdquo; &amp; Trumpet Recordings</div>
+          </div>
+          <span class="pill blue">Listen Free</span>
+        </div>
+        <p>Listen to solo trumpet arrangements with custom backing accompaniment or send the free Musical eCard to a friend:</p>
+        <div class="bandlab-wrap">
+          <iframe src="https://www.bandlab.com/embed/?id=d3a55e34-0d2f-ef11-86c3-002248495042" title="Trumpet Monk Sample Sound" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="bandlab-wrap">
+          <iframe src="https://www.bandlab.com/embed/?id=7daf3594-c7a0-ef11-8473-000d3a3f8349" title="Trumpet Monk Trending Track" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="btn-row">
+          <a href="https://softart.io/trumpet-monk-gift-wonderful-world" target="_blank" rel="noopener noreferrer" class="action-btn primary">🎁 Open &ldquo;Wonderful World&rdquo; Musical eCard</a>
+          <a href="https://softart.io/trumpet-monk-tracker" target="_blank" rel="noopener noreferrer" class="action-btn">📍 Live Tracker</a>
+        </div>
+      </div>
+
+      <!-- Trivia & Downtown Chapel Hill Partnership -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Trumpet Monk Trivia &amp; Community</div>
+            <div class="card-subtitle">In Partnership with Downtown Chapel Hill (XDCH / CHDP)</div>
+          </div>
+          <span class="pill">Win Prizes</span>
+        </div>
+        <img class="card-img" src="https://dl.dropbox.com/scl/fi/ein4lf50bsqonp8m1ajf8/Trumpet-Monk-Trivia-Game-Header-Logo-v2025-03-13.jpg?rlkey=1qr3fhvfwhfcnqbruhfccoc6h&dl=0" alt="Trumpet Monk Trivia Game" loading="lazy" />
+        <p>
+          <strong>Reminder:</strong> Trivia winners can come to Franklin St. at UNC Chapel Hill and find Chris / Trumpet Monk to claim their prize in person!
+        </p>
+        <div class="btn-row">
+          <a href="https://softart.io/trumpet-monk-trivia" target="_blank" rel="noopener noreferrer" class="action-btn primary">Play Trumpet Monk Trivia</a>
+          <a href="https://softart.io/trumpet-monk-newsletter" target="_blank" rel="noopener noreferrer" class="action-btn">Join Newsletter</a>
+          <button type="button" class="action-btn" onclick="openBookingSubject('Music-Lessons---In-Person')">🎸 Music Lessons</button>
+        </div>
+      </div>
+
+      <!-- Welcome to UNC Chapel Hill & Visitors Guide -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Welcome to UNC Chapel Hill</div>
+            <div class="card-subtitle">&ldquo;The Southern Part of Heaven&rdquo; &bull; 2026 Official Visitors Guide</div>
+          </div>
+          <span class="pill blue">Featured</span>
+        </div>
+        <p>My mission would not be possible without our world-class university and the Town of Chapel Hill Welcome Center (308 W. Franklin St.).</p>
+        <img class="card-img" src="https://dl.dropbox.com/scl/fi/zhzg6nxq5v4nyc4ve8q05/TMonk-Chapel-Hill-2026-Visitors-Guide-2026-02-20_13-32-37.jpg?rlkey=mb1jp9bx4o1g1bzkx2mz685mp&dl=0" alt="2026 Chapel Hill Official Visitors Guide featuring Trumpet Monk" loading="lazy" />
+        <div class="btn-row">
+          <a href="https://www.dailytarheel.com/article/2023/04/city-franklin-street-trumpet-guy-feature" target="_blank" rel="noopener noreferrer" class="action-btn">📰 Read The Daily Tar Heel Feature</a>
+        </div>
+      </div>
     </section>
-  </main>
+
+    <!-- ==========================================
+         TAB 2: LIVE EVENTS & PRIVATE FUNCTIONS
+         ========================================== -->
+    <section id="tab-events" class="tab-panel" aria-label="Live Events and Booking">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Live Events &amp; Private Functions</div>
+            <div class="card-subtitle">Solo Trumpet Performer with Advanced Backing Accompaniment</div>
+          </div>
+          <span class="pill">Book Now</span>
+        </div>
+        <p>
+          Memories to last a lifetime &mdash; when performing at private events, my focus is making sure your friends, fraternity, or family build lasting memories.
+        </p>
+
+        <!-- Video: Wonderful World at UNC Sigma Chi Parents Weekend -->
+        <div class="video-wrap">
+          <iframe src="https://player.vimeo.com/video/904663630?autopause=0&dnt=true" title="Wonderful World — UNC Sigma Chi Parents Weekend" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="testimonial">
+          &ldquo;Chris &mdash; Thanks for coming out! We had a lot of fun and everyone was loving you!&rdquo;
+          <strong>&mdash; UNC Chi Psi Fraternity Cocktail &amp; Private Event</strong>
+        </div>
+
+        <div class="testimonial">
+          &ldquo;Hey Chris! Was great having you Saturday. Would love to have you back soon, it was awesome.&rdquo;
+          <strong>&mdash; UNC Sigma Chi Fraternity Parents Weekend</strong>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="action-btn primary" onclick="openBookingSubject('Trumpet-Performance')">🎺 Book Chris for Your Event &rarr;</button>
+          <button type="button" class="action-btn" onclick="openBookingSubject('Music-Lessons---Online-via-Zoom')">🎓 Trumpet &amp; Guitar Lessons</button>
+        </div>
+      </div>
+
+      <!-- Recent UNC Fraternity & Chapel Hill Performances -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">UNC Chapel Hill &amp; Private Event Highlights</div>
+            <div class="card-subtitle">Chi Psi &bull; Beta Theta Pi (Roaring 20s) &bull; Sigma Chi &bull; Varsity Theater</div>
+          </div>
+        </div>
+        <div class="photo-grid">
+          <img src="https://dl.dropbox.com/scl/fi/j3tbdsxu8lsebmffm1itp/TMonk-Events-Chi-Psi-White-Party-2025-09-05-DSC07236-20PCT.jpg?rlkey=tvko2uv69zo291mod2vlpkfux&dl=0" alt="UNC Chi Psi Private Event" loading="lazy" />
+          <img src="https://dl.dropbox.com/scl/fi/b9f5zsd4b8pkzv0gn0039/TMonk-Events-UNC-Beta-Roaring-20s-2025-09-19-Chris-Anthony-and-Brothers-15PCT.jpg?rlkey=7qqi5xc1bsrftxft3vr5jp7uu&dl=0" alt="UNC Beta Theta Pi Roaring 20s Event" loading="lazy" />
+        </div>
+        <div class="bandlab-wrap" style="margin-top:0.75rem;">
+          <iframe src="https://www.bandlab.com/embed/?id=1e73e738-f629-ef11-86d2-6045bd2cd6bc" title="UNC Chi Psi Performance Recording" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- World-Class Credentials -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Global &amp; High-Society Credentials</div>
+            <div class="card-subtitle">From Chapel Hill Icons to Global Corporations</div>
+          </div>
+          <span class="pill blue">Experience</span>
+        </div>
+        <ul class="cred-list">
+          <li><span class="bullet">&#10003;</span> <span><strong>UNC &amp; East Coast Notables:</strong> Performed for the <strong>Kenan family</strong>, the <strong>Dean Smith family</strong>, <strong>Eric Montross</strong> (Boston Celtics), and the <strong>Bassett Furniture family</strong> (Figure Eight Island).</span></li>
+          <li><span class="bullet">&#10003;</span> <span><strong>Legendary Concert Openers:</strong> Opened for <strong>B.B. King</strong>, <strong>Joe Cocker</strong>, and <strong>The Fabulous Thunderbirds</strong> with <em>Soul Desire</em>, plus Motown tributes at Varsity Theater.</span></li>
+          <li><span class="bullet">&#10003;</span> <span><strong>Acclaimed Collaborations:</strong> Recorded and performed with members of <strong>Squirrel Nut Zippers</strong>, <strong>Mickey Mills and Steel</strong>, and the North Carolina Theater Orchestra.</span></li>
+          <li><span class="bullet">&#10003;</span> <span><strong>Mainland China &amp; Tencent ($378B):</strong> Founded Beijing's <em>China Blues</em> band, served as Foreign Music Manager at UKlub in Shenzhen, and headlined private mountain hot-spring resort functions for <strong>Tencent Corporation</strong> (creators of WeChat).</span></li>
+        </ul>
+        <div class="photo-grid">
+          <img src="https://sdos.cloud/wp-content/object/China-Blues-SZ-Tencent-Party.jpg" alt="Performing for Tencent Corporation in China" loading="lazy" />
+          <img src="https://sdos.cloud/wp-content/object/Voice-MusizWiz-Chris-SZ-Gig-Car-Show-1.jpg" alt="Shenzhen Auto Expo Performance" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3: MY STORY & DOCUMENTARIES
+         ========================================== -->
+    <section id="tab-story" class="tab-panel" aria-label="My Story">
+      <!-- Intro Story -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Evolution &amp; Rebirth</div>
+            <div class="card-subtitle">From Pro Musician in China to Spiritual Digital Monk</div>
+          </div>
+          <span class="pill">My Story</span>
+        </div>
+        <p>
+          When I started playing guitar at age six, I never dreamed music would take me around the world ten times over—touring the USA, Europe, South America, and living a decade in Asia as founder of the <strong>China Blues</strong> band and Foreign Music Manager in Shenzhen.
+        </p>
+        <p>
+          Despite performing at six-star resorts overlooking Hong Kong Bay and private events for billionaires, I felt an empty void seeing extreme poverty right outside those exclusive venues. I walked away from the music business, renounced performing, and spent years studying in monasteries and temples across China and Southeast Asia before returning to Chapel Hill to care for my mother during her battle with cancer.
+        </p>
+        <p>
+          In February 2022, just before the Russia-Ukraine war began, I heard an interview with a Ukrainian jazz singer who said she coped with the coming war by losing herself in music—while an incredible trumpet played in the background. Having left all my guitars in China, I pulled out a trumpet gifted by a close friend in Shenzhen, taught myself on the steps of UNC's Kenan Music Building, and lowered my ego right out onto the street corner to serve others.
+        </p>
+        <div class="testimonial">
+          &ldquo;I am not a musician, I am a monk that plays music. Some people bring food to help others and some people bring blankets. For me, the best gift I could give was music.&rdquo;
+          <strong>&mdash; Chris (Trumpet Monk)</strong>
+        </div>
+      </div>
+
+      <!-- Documentary 1: Gerard Millman / UNC Hussman -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">UNC Hussman School Documentary</div>
+            <div class="card-subtitle">Produced by Gerard Millman &mdash; The Storyteller</div>
+          </div>
+          <span class="pill blue">Film</span>
+        </div>
+        <div class="video-wrap">
+          <iframe src="https://player.vimeo.com/video/891467313?autopause=0" title="Trumpet Monk Documentary by Gerard Millman" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Documentary 2: Monk, Not Musician -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">&ldquo;Monk, Not Musician&rdquo;</div>
+            <div class="card-subtitle">UNC Dept. of Communication &bull; Film by Eric Thorn &amp; Brian Corrigan</div>
+          </div>
+          <span class="pill blue">Interview</span>
+        </div>
+        <div class="video-wrap">
+          <iframe src="https://player.vimeo.com/video/876030515?autopause=0" title="Monk, Not Musician Documentary" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Last Guitar Recording in Mainland China & Beijing Studio -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">China Blues &amp; Final Studio Recordings</div>
+            <div class="card-subtitle">Recorded on the First Take Near the Hong Kong Border</div>
+          </div>
+        </div>
+        <p>
+          On a hot day near the Hong Kong border, in a small studio owned by an old jazz lover named Situ, we recorded my final guitar track in mainland China on the very first take with zero edits:
+        </p>
+        <div class="video-wrap">
+          <iframe src="https://player.vimeo.com/video/802345346?autopause=0" title="Final Guitar Recording in Mainland China" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top:0.75rem;">
+          <strong>Beijing Pro Studio Recording:</strong> China Blues (Chris on Lead Guitar, Xiao Feng on Rhythm Guitar &amp; Vocals):
+        </p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/OJWRhQcTIfA" title="China Blues Beijing Pro Studio Recording" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Gratitude to UNC Professors -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Special Thanks to UNC Chapel Hill</div>
+            <div class="card-subtitle">Mentors, Professors &amp; Interactive 3D AI Exhibit</div>
+          </div>
+        </div>
+        <ul class="cred-list">
+          <li><span class="bullet">&bull;</span> <span><strong>Dr. Li-ling Hsiao:</strong> &ldquo;Language can never be separated from culture.&rdquo;</span></li>
+          <li><span class="bullet">&bull;</span> <span><strong>Dr. Lauren Leve:</strong> &ldquo;Never underestimate the power of physical representations to convey belief systems.&rdquo;</span></li>
+          <li><span class="bullet">&bull;</span> <span><strong>Dr. Mark Evan Bonds:</strong> &ldquo;Beethoven was much more than just a scowl!&rdquo;</span></li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://softart.io/app-trumpetmonk/7769/my-story-ai-exhibit-trumpet" target="_blank" rel="noopener noreferrer" class="action-btn">🎺 3D Exhibit: Trumpet</a>
+          <a href="https://softart.io/app-trumpetmonk/7773/my-story-ai-exhibit-tech-gear" target="_blank" rel="noopener noreferrer" class="action-btn">⌚ 3D Exhibit: Tech Gear</a>
+          <a href="https://softart.io/app-trumpetmonk/7249/my-story-ai-exhibit-green-dragon" target="_blank" rel="noopener noreferrer" class="action-btn">🐉 3D Exhibit: Green Dragon</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 4: CONTACT & EVENT INQUIRY FORM
+         ========================================== -->
+    <section id="tab-contact" class="tab-panel" aria-label="Contact Chris">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Contact Trumpet Monk</div>
+            <div class="card-subtitle">Live Event Bookings, Lessons, Trivia, Sponsorships &amp; Studio</div>
+          </div>
+          <span class="pill">Direct Inquiry</span>
+        </div>
+        <p style="font-size:0.82rem;">
+          <em>Note: I am available for live in-person performances, music lessons (in-person or Zoom), sponsorships, and online studio recording sessions.</em>
+        </p>
+
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label for="c-name">Name <span class="req">*</span></label>
+            <input type="text" id="c-name" name="name" required placeholder="E.g. John Doe" autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="c-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="c-email" name="email" required placeholder="E.g. john@doe.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="c-subject">Subject — How can I help? <span class="req">*</span></label>
+            <select id="c-subject" name="subject" required onchange="toggleEventFields()">
+              <option value="Trumpet-Performance">Trumpet Performance - In-Person - Live Event</option>
+              <option value="Music-Lessons---In-Person">Music Lessons - In-Person</option>
+              <option value="Music-Lessons---Online-via-Zoom">Music Lessons - Online via Zoom</option>
+              <option value="Trumpet-Monk-Trivia">Trumpet Monk Trivia</option>
+              <option value="Advertise -or-Sponsor-Trumpet Monk---Expand-Your-Reach">Advertise or Sponsor Trumpet Monk - Expand Your Reach</option>
+              <option value="Studio-Recording-via-Internet-Studio">Studio Recording via Internet Studio</option>
+              <option value="Creative-Collaboration">Creative Collaboration</option>
+            </select>
+          </div>
+
+          <!-- Conditional Event Fields (Shown when "Trumpet Performance" is selected, matching original Forminator form #5044) -->
+          <div id="eventFields" class="event-conditional visible">
+            <p style="font-size:0.8rem;color:var(--accent-gold);margin-bottom:0.75rem;">
+              <strong>Event Details (For Accurate Travel &amp; Setup Quote):</strong>
+            </p>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="c-date">Event Date <span class="req">*</span></label>
+                <input type="date" id="c-date" name="eventDate" />
+              </div>
+              <div class="form-group">
+                <label for="c-time">Start Time <span class="req">*</span></label>
+                <input type="text" id="c-time" name="eventTimeText" placeholder="E.g. 6:00 PM" value="6:00 PM" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="c-venue">Venue Name / Street Address <span class="req">*</span></label>
+              <input type="text" id="c-venue" name="venue" placeholder="E.g. Carolina Inn or Fraternity House" />
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="c-city">City <span class="req">*</span></label>
+                <input type="text" id="c-city" name="city" value="Chapel Hill" />
+              </div>
+              <div class="form-group">
+                <label for="c-state">State &amp; ZIP <span class="req">*</span></label>
+                <input type="text" id="c-state" name="stateZip" value="NC 27516" />
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="c-blacktie">Black Tie Event?</label>
+                <select id="c-blacktie" name="blackTie">
+                  <option value="two">No — Not Black Tie</option>
+                  <option value="one">Yes — Black Tie Function</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="c-tuxedo">Full Tuxedo Required?</label>
+                <select id="c-tuxedo" name="tuxedo">
+                  <option value="two">No — Tuxedo Not Required</option>
+                  <option value="one">Yes — Prefer Full Tuxedo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="c-indoor">Indoor / Outdoor</label>
+                <select id="c-indoor" name="indoorOutdoor">
+                  <option value="one">Indoors</option>
+                  <option value="two">Outdoors (Weather Permitting)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="c-attendees">Estimated Attendees</label>
+                <select id="c-attendees" name="attendees">
+                  <option value="one">Less than 25</option>
+                  <option value="two" selected>25 – 50</option>
+                  <option value="Estimate-number-of-attendees-approximately---50--75">50 – 75</option>
+                  <option value="Estimate-number-of-attendees-approximately---25---50">75 – 100</option>
+                  <option value="Estimate-number-of-attendees-approximately---100---150">100 – 150</option>
+                  <option value="Estimate-number-of-attendees-approximately---MORE-than-150">More than 150</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="c-pa">PA / Sound System</label>
+                <select id="c-pa" name="paSystem">
+                  <option value="two">Trumpet Monk Brings Sound Setup</option>
+                  <option value="one">Provided by Client</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="c-budget">Estimated Budget (USD)</label>
+                <input type="text" id="c-budget" name="budget" placeholder="E.g. $300" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-phone">Phone / SMS / Text (Optional)</label>
+            <input type="tel" id="c-phone" name="phone" placeholder="E.g. +1 (919) 555-0123" autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="c-message">Message <span class="req">*</span></label>
+            <textarea id="c-message" name="message" rows="4" required placeholder="Tell me about your event, lesson goals, or question..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="c-safe" required checked />
+              <span>You will receive an email reply from Soft-Designs / SoftArt—please check your inbox or spam folder. <span class="req">*</span></span>
+            </label>
+          </div>
+
+          <button type="submit" id="submitBtn" class="submit-btn">Send Inquiry to Trumpet Monk</button>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    <div class="social-links">
-      <a href="https://softart.io/trumpetmonk" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-        </svg>
-        Full Platform
-      </a>
-      <a href="https://softart.io/trumpetmonk-my-story" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-        </svg>
-        My Story
-      </a>
-      <a href="https://softart.io/trumpet-monk-events" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
-        </svg>
-        Events
-      </a>
-      <a href="https://softart.io/trumpet-contact" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-        Contact
-      </a>
+    <div class="quote-banner">
+      &ldquo;War occurs when artists are silenced. When weak leaders create chaos and suffering, strong people create joy and peace.&rdquo;
     </div>
-    <p class="quote">"When weak leaders create chaos and suffering, strong people create joy and peace."</p>
-    <p class="footer-note">trumpetmonk.org &bull; Thank you for supporting live music!</p>
+    <p class="footer-note">
+      trumpetmonk.org &bull; Chapel Hill, NC &bull; Thank you for supporting live street music!
+    </p>
   </footer>
 
+  <script>
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+      document.querySelectorAll('.tab-panel').forEach((panel) => {
+        panel.classList.toggle('active', panel.id === 'tab-' + tabName);
+      });
+    }
+
+    function openBookingSubject(subjectValue) {
+      switchTab('contact');
+      const select = document.getElementById('c-subject');
+      if (select) {
+        select.value = subjectValue;
+        toggleEventFields();
+      }
+      document.getElementById('tab-contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function toggleEventFields() {
+      const subject = document.getElementById('c-subject').value;
+      const eventBox = document.getElementById('eventFields');
+      if (subject === 'Trumpet-Performance') {
+        eventBox.classList.add('visible');
+      } else {
+        eventBox.classList.remove('visible');
+      }
+    }
+
+    async function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const statusEl = document.getElementById('formStatus');
+      btn.disabled = true;
+      btn.textContent = 'Sending Inquiry...';
+      statusEl.className = 'form-status';
+      statusEl.style.display = 'none';
+
+      const payload = {
+        name: document.getElementById('c-name').value.trim(),
+        email: document.getElementById('c-email').value.trim(),
+        subject: document.getElementById('c-subject').value,
+        eventDate: document.getElementById('c-date').value,
+        eventTimeText: document.getElementById('c-time').value,
+        venue: document.getElementById('c-venue').value.trim(),
+        city: document.getElementById('c-city').value.trim(),
+        stateZip: document.getElementById('c-state').value.trim(),
+        blackTie: document.getElementById('c-blacktie').value,
+        tuxedo: document.getElementById('c-tuxedo').value,
+        indoorOutdoor: document.getElementById('c-indoor').value,
+        attendees: document.getElementById('c-attendees').value,
+        paSystem: document.getElementById('c-pa').value,
+        budget: document.getElementById('c-budget').value.trim(),
+        phone: document.getElementById('c-phone').value.trim(),
+        message: document.getElementById('c-message').value.trim()
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data && data.success) {
+          statusEl.className = 'form-status success';
+          statusEl.innerHTML = '<strong>Thank you!</strong> Your message has been sent directly to Chris (Trumpet Monk). Please watch for a reply from Soft-Designs / SoftArt.';
+          document.getElementById('contactForm').reset();
+          toggleEventFields();
+        } else {
+          // If upstream WordPress requires interactive reCAPTCHA challenge, format a direct email + one-click fallback
+          const subjectLine = encodeURIComponent('[TrumpetMonk.org] ' + payload.subject + ' — ' + payload.name);
+          let bodyLines = [
+            'Name: ' + payload.name,
+            'Email: ' + payload.email,
+            'Phone/SMS: ' + (payload.phone || 'N/A'),
+            'Subject: ' + payload.subject
+          ];
+          if (payload.subject === 'Trumpet-Performance') {
+            bodyLines.push(
+              'Event Date: ' + (payload.eventDate || 'TBD') + ' at ' + (payload.eventTimeText || 'TBD'),
+              'Venue: ' + (payload.venue || 'TBD') + ', ' + payload.city + ' ' + payload.stateZip,
+              'Indoor/Outdoor: ' + (payload.indoorOutdoor === 'one' ? 'Indoors' : 'Outdoors'),
+              'Estimated Budget: ' + (payload.budget || 'Flexible')
+            );
+          }
+          bodyLines.push('', 'Message:', payload.message);
+          const mailtoUrl = 'mailto:accounting@soft-designs.com?subject=' + subjectLine + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+
+          statusEl.className = 'form-status info';
+          statusEl.innerHTML = '<strong>Ready to Send:</strong> Click below to complete sending your formatted inquiry via email or the official SoftArt captcha portal:<div class="btn-row" style="margin-top:0.5rem;"><a href="' + mailtoUrl + '" class="action-btn primary">✉️ Send via Email Client Now</a><a href="https://softart.io/trumpet-contact" target="_blank" rel="noopener noreferrer" class="action-btn">🔒 Verify Captcha on SoftArt.io</a></div>';
+        }
+      } catch (err) {
+        statusEl.className = 'form-status info';
+        statusEl.innerHTML = '<strong>Connect Directly:</strong> <a href="mailto:accounting@soft-designs.com" style="color:#fff;text-decoration:underline;">Email Chris directly</a> or use the <a href="https://softart.io/trumpet-contact" target="_blank" style="color:#fff;text-decoration:underline;">SoftArt Contact Portal</a>.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Inquiry to Trumpet Monk';
+      }
+    }
+  </script>
 </body>
 </html>
